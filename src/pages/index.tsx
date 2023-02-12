@@ -4,7 +4,7 @@ import React, { ReactElement, useState } from "react";
 
 interface Props {}
 
-function index({}: Props): ReactElement {
+function Index({}: Props): ReactElement {
   const [image, setImage] = useState<File>();
   const [preview, setPreview] = useState<string>();
   const [file, setFile] = useState<File>();
@@ -34,4 +34,4 @@ function index({}: Props): ReactElement {
   );
 }
 
-export default index;
+export default Index;
