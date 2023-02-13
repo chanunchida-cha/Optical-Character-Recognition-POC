@@ -10,11 +10,11 @@ function Button({ title, type }: Props) {
     <button
       className={`${
         type === "upload"
-          ? "bg-button"
+          ? "bg-button  w-[8rem]"
           : type === "add"
-          ? "bg-button-add w-[4rem]"
-          : "bg-button-delete w-[4rem]"
-      } rounded-2xl text-sm text-white py-1 w-[8rem] `}
+          ? "bg-button-add w-[5rem]"
+          : "bg-button-delete w-[5rem]"
+      } rounded-2xl text-sm text-white py-1 `}
     >
       {title}
     </button>

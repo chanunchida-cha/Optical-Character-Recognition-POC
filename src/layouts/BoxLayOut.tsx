@@ -6,16 +6,18 @@ type Props = {
   image: File;
   preview: string;
   icon: React.ReactNode;
+  buttonUpload:React.ReactNode
+  buttonDelete:React.ReactNode
   setPreview: (objectUrl: string) => void;
   setImage: (file: File) => void;
 };
 
-const BoxLayOut = ({ preview, image, icon, setPreview, setImage }: Props) => {
+const BoxLayOut = ({ preview, image, icon, setPreview, setImage,buttonDelete,buttonUpload }: Props) => {
   return (
     <div className="flex flex-col justify-around ">
       <div className="shrink w-full  bg-box mb-2 px-[1.8rem] py-[2.3rem] h-fit sm:h-[40rem] sm:px-[6rem] sm:py-[3rem] rounded-xl shadow-xl text-[1rem] sm:text-[1.3rem] border border-border-box ">
         <div className="flex justify-end mb-2">
-          <Button title="Delete" type="delete" />
+          {buttonDelete}
         </div>
         <div className="mb-2">
           <div className="flex justify-center text-title-text ">
@@ -60,7 +62,7 @@ const BoxLayOut = ({ preview, image, icon, setPreview, setImage }: Props) => {
           </div>
         </div>
         <div className="flex justify-center mt-2">
-          <Button title="Upload" type="upload" />
+          {buttonUpload}
         </div>
         <div>
           <div className="text-title-text mt-6">Medicine name.</div>

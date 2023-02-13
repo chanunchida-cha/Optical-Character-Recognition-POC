@@ -1,4 +1,5 @@
 import BoxLayOut from "@/layouts/BoxLayOut";
+import Button from "@/ui/Button";
 import React, { ReactElement } from "react";
 
 type Props = {
@@ -12,7 +13,6 @@ type Props = {
 function FormMed({
   preview,
   image,
-
   setPreview,
   setImage,
 }: Props): ReactElement {
@@ -22,6 +22,8 @@ function FormMed({
       preview={preview!}
       setPreview={setPreview}
       setImage={setImage}
+      buttonDelete=<Button title="Delete" type="delete" />
+      buttonUpload=<Button title="Upload" type="upload" />
       icon=<svg
         xmlns="http://www.w3.org/2000/svg"
         width="28"
