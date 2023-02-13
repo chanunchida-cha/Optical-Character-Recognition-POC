@@ -6,19 +6,25 @@ type Props = {
   image: File;
   preview: string;
   icon: React.ReactNode;
-  buttonUpload:React.ReactNode
-  buttonDelete:React.ReactNode
+  buttonUpload: React.ReactNode;
+  buttonDelete: React.ReactNode;
   setPreview: (objectUrl: string) => void;
   setImage: (file: File) => void;
 };
 
-const BoxLayOut = ({ preview, image, icon, setPreview, setImage,buttonDelete,buttonUpload }: Props) => {
+const BoxLayOut = ({
+  preview,
+  image,
+  icon,
+  setPreview,
+  setImage,
+  buttonDelete,
+  buttonUpload,
+}: Props) => {
   return (
     <div className="flex flex-col justify-around ">
       <div className="shrink w-full  bg-box mb-2 px-[1.8rem] py-[2.3rem] h-fit sm:h-[40rem] sm:px-[6rem] sm:py-[3rem] rounded-xl shadow-xl text-[1rem] sm:text-[1.3rem] border border-border-box ">
-        <div className="flex justify-end mb-2">
-          {buttonDelete}
-        </div>
+        <div className="flex justify-end mb-2">{buttonDelete}</div>
         <div className="mb-2">
           <div className="flex justify-center text-title-text ">
             Upload image of medicine label
@@ -61,16 +67,14 @@ const BoxLayOut = ({ preview, image, icon, setPreview, setImage,buttonDelete,but
             </div>
           </div>
         </div>
-        <div className="flex justify-center mt-2">
-          {buttonUpload}
-        </div>
+        <div className="flex justify-center mt-2">{buttonUpload}</div>
         <div>
           <div className="text-title-text mt-6">Medicine name.</div>
           <div className="flex flex-row">
             <div className="w-[14rem] sm:w-[20rem] ">
               <input
                 placeholder="Input your medicine name. "
-                className="w-full  border border-border-box rounded-3xl py-1 px-2"
+                className="w-full text-sm sm:text-[1rem]  border border-border-box rounded-3xl py-1 sm:py-2 px-2"
               />
             </div>
             <div>aa</div>
