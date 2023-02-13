@@ -12,9 +12,9 @@ function Button({ title, type }: Props) {
         type === "upload"
           ? "bg-button"
           : type === "add"
-          ? "bg-button-add"
-          : "bg-button-delete"
-      } rounded-2xl text-white py-1 w-[8rem] `}
+          ? "bg-button-add w-[5rem]"
+          : "bg-button-delete w-[5rem]"
+      } rounded-2xl text-sm text-white py-1 w-[8rem] `}
     >
       {title}
     </button>

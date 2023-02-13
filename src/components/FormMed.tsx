@@ -4,7 +4,7 @@ import React, { ReactElement } from "react";
 type Props = {
   image: File;
   preview: string;
-  icon: React.ReactNode;
+
   setPreview: (objectUrl: string) => void;
   setImage: (file: File) => void;
 };
@@ -12,7 +12,7 @@ type Props = {
 function FormMed({
   preview,
   image,
-  icon,
+
   setPreview,
   setImage,
 }: Props): ReactElement {
