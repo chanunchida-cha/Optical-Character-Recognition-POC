@@ -1,5 +1,5 @@
 import FormMed from "@/components/FormMed";
-import BoxLayOut from "@/layouts/BoxLayOut";
+import BoxLayOut from "@/layouts/BoxLayout";
 import React, { ReactElement, useState } from "react";
 
 interface Props {}
