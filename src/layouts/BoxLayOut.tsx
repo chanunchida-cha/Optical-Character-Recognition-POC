@@ -29,7 +29,6 @@ const BoxLayOut = ({
           <div className="flex justify-center text-title-text ">
             Upload image of medicine label
           </div>
-  
         </div>
         <div className=" flex  justify-center  ">
           <div className="flex p-5 flex-col justify-center items-center mx-auto border-dashed border-2 rounded-xl border-border-box w-[10rem] h-[9rem] sm:w-[20rem] sm:h-[13rem]">
