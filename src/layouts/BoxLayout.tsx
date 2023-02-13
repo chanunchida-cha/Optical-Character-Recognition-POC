@@ -25,7 +25,6 @@ const BoxLayout = ({
   return (
     <div className="flex flex-col justify-around ">
       <div className="shrink w-full  bg-box mb-2 px-[1rem] py-[2.3rem] h-fit sm:h-[40rem] sm:px-[6rem] sm:py-[3rem] rounded-xl shadow-xl text-[1rem] sm:text-[1.3rem] border border-border-box ">
-        <div className="flex justify-end mb-2">{buttonDelete}</div>
         <div className="mb-2">
           <div className="flex justify-center text-title-text ">
             Upload image of medicine label
