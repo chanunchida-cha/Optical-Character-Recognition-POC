@@ -1,4 +1,4 @@
-export function getBase64(file: File) {
+export function getBase64(file: File):Promise<any>{
     const reader = new FileReader();
     const base64 = Promise.all([
       new Promise((resolve, reject) => {
@@ -13,6 +13,6 @@ export function getBase64(file: File) {
         };
       }),
     ]).then((res) => res[0]);
-    return base64;
+    return base64 ;
   }
   
