@@ -8,18 +8,26 @@ const tesseract = require("tesseract.js");
 
 const image = "./img/2.jpg";
 var pharmacies = [
-    "Walgreens",
-    "CVS Pharmacy",
-    "Rite Aid",
-    "Walmart Pharmacy",
-    "Duane Reade",
-    "Kroger Pharmacy",
-    "Safeway Pharmacy",
-    "Target Pharmacy",
-    "Albertsons Pharmacy",
+    "doxycycline",
+    "spironolactone",
+    "minocycline",
+    "Accutane",
+    "clindamycin",
+    "Aldactone",
+    "tretinoin",
+    "isotretinoin",
+    "Bactrim",
+    "Retin-A",
+    "Aczone",
+    "benzoyl peroxide",
+    "Differin",
+    "Epiduo",
+    "adapalene",
+    "cephalexin",
+    "Doryx",
+    "tetracycline",
     "trazodone",
     "dobutamine",
-    "propranolol",
 ];
 
 function Index({}: Props): ReactElement {
