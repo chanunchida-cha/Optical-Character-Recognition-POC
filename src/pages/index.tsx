@@ -18,6 +18,8 @@ var pharmacies = [
     "Target Pharmacy",
     "Albertsons Pharmacy",
     "trazodone",
+    "dobutamine",
+    "propranolol",
 ];
 
 function Index({}: Props): ReactElement {
