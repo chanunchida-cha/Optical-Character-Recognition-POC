@@ -22,21 +22,6 @@ const BoxLayout = ({
   buttonDelete,
   buttonUpload,
 }: Props) => {
-  const handleFileSelect = (event: ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      const imageDataUrl = event.target?.result;
-      const imageElement = document.createElement("img");
-      const imageString = imageDataUrl?.toString();
-      imageElement.src = imageString!;
-
-      const specifiedFrame = document.getElementById("specified-frame");
-      specifiedFrame?.appendChild(imageElement);
-    };
-    reader.readAsDataURL(file!);
-  };
-
   return (
     <div className="flex flex-col justify-around ">
       <div className="shrink w-full  bg-box mb-2 px-[1rem] py-[2.3rem] h-fit sm:h-[40rem] sm:px-[6rem] sm:py-[3rem] rounded-xl shadow-xl text-[1rem] sm:text-[1.3rem] border border-border-box ">
@@ -71,8 +56,7 @@ const BoxLayout = ({
                   type="file"
                   className="sr-only"
                   onChange={(e) => {
-                    handleFileSelect(e);
-                    // previewImage(e, setPreview, setImage, image!);
+                    previewImage(e, setPreview, setImage, image!);
                   }}
                   required
                 />
