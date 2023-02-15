@@ -1,6 +1,7 @@
 import BoxLayout from "@/layouts/BoxLayout";
 import Button from "@/ui/Button";
-import React, { ReactElement } from "react";
+import { uploadImage } from "@/utils/uploadImage";
+import React, { ChangeEvent, ReactElement } from "react";
 
 type Props = {
   image: File;
@@ -16,14 +17,16 @@ function FormMed({
   setPreview,
   setImage,
 }: Props): ReactElement {
+
+
+
   return (
     <BoxLayout
       image={image!}
       preview={preview!}
       setPreview={setPreview}
       setImage={setImage}
-      buttonDelete={<Button title="Delete" type="delete" />}
-      buttonUpload={<Button title="Upload" type="upload" />}
+      buttonUpload={<Button title="Upload" type="upload"  />}
       icon={
         <svg
           xmlns="http://www.w3.org/2000/svg"

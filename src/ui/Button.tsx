@@ -1,11 +1,12 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 type Props = {
   title: string;
   type: string;
-  onClick?: () => {};
+  image?:FormData
+  upload?: (image: FormData, e: ChangeEvent<HTMLInputElement>) => Promise<void>;
 };
 
-function Button({ title, type }: Props) {
+function Button({ title, type,upload,image }: Props) {
   return (
     <button
       className={`${
@@ -15,6 +16,7 @@ function Button({ title, type }: Props) {
           ? "bg-button-add w-[5rem]"
           : "bg-button-delete w-[5rem]"
       } rounded-2xl text-sm text-white py-1 `}
+      
     >
       {title}
     </button>

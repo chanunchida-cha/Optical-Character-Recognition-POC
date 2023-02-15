@@ -13,6 +13,8 @@ export function getBase64(file: File) {
         };
       }),
     ]).then((res) => res[0]);
+
     return base64;
-  }
   
+    
+  }
