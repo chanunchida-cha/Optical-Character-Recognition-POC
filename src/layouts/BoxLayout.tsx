@@ -6,6 +6,7 @@ import React, {
   ChangeEvent,
   FormEvent,
   MouseEventHandler,
+  useEffect,
   useState,
 } from "react";
 import { uploadImage } from "@/utils/uploadImage";
@@ -37,6 +38,10 @@ const BoxLayout = ({ preview, image, icon, setPreview, setImage }: Props) => {
     setResult(res.result);
     setPending(false);
   };
+
+  useEffect(() => {
+    setResult("");
+  }, [image]);
 
   return (
     <div className="flex flex-col justify-around ">
@@ -129,7 +134,11 @@ const BoxLayout = ({ preview, image, icon, setPreview, setImage }: Props) => {
                 />
               </div>
               <div className="w-[6rem] sm:w-[10rem] ml-2 sm:ml-2">
-                <ButtonAmount amount={amount} setAmount={setAmount} result={result} />
+                <ButtonAmount
+                  amount={amount}
+                  setAmount={setAmount}
+                  result={result}
+                />
               </div>
             </div>
           </div>
