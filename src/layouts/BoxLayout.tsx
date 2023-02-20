@@ -2,15 +2,14 @@ import Button from "@/ui/Button";
 import ButtonAmount from "@/ui/ButtonAmount";
 import { previewImage } from "@/utils/previewImage";
 import { getBase64 } from "@/utils/convertImageToBase64";
+import Image from "react-image-webp";
 import React, {
   ChangeEvent,
   FormEvent,
-  MouseEventHandler,
   useEffect,
   useState,
 } from "react";
 import { uploadImage } from "@/utils/uploadImage";
-import axios from "axios";
 
 type Props = {
   image: File;
@@ -42,6 +41,7 @@ const BoxLayout = ({ preview, image, icon, setPreview, setImage }: Props) => {
   useEffect(() => {
     setResult("");
   }, [image]);
+  console.log(result);
 
   return (
     <div className="flex flex-col justify-around ">

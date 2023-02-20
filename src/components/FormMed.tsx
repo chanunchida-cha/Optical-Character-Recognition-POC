@@ -17,16 +17,13 @@ function FormMed({
   setPreview,
   setImage,
 }: Props): ReactElement {
-
-
-
   return (
     <BoxLayout
       image={image!}
       preview={preview!}
       setPreview={setPreview}
       setImage={setImage}
-      buttonUpload={<Button title="Upload" type="upload"  />}
+      buttonUpload={<Button title="Upload" type="upload" />}
       icon={
         <svg
           xmlns="http://www.w3.org/2000/svg"
