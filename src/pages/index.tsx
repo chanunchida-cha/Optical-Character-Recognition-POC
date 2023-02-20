@@ -9,35 +9,35 @@ function Index({}: Props): ReactElement {
   const [image, setImage] = useState<File>();
   const [preview, setPreview] = useState<string>();
 
-  const resizer = async (file: File) => {
-    const resizeFile = new Promise((resolve, reject) => {
-      Resizer.imageFileResizer(
-        file,
-        400, ////width
-        400, /// height
-        "WEBP",
-        90, /// quality
-        0, // Rotate degree
-        (uri: any) => {
-          resolve(uri);
-        },
-        "file"
-      );
-    }).then((res) => res);
-    const resizeFiled = await Promise.all([resizeFile]).then((res) => res[0]);
+  // const resizer = async (file: File) => {
+  //   const resizeFile = new Promise((resolve, reject) => {
+  //     Resizer.imageFileResizer(
+  //       file,
+  //       500, ////width
+  //       500, /// height
+  //       "WEBP",
+  //       100, /// quality
+  //       0, // Rotate degree
+  //       (uri: any) => {
+  //         resolve(uri);
+  //       },
+  //       "file"
+  //     );
+  //   }).then((res) => res);
+  //   const resizeFiled = await Promise.all([resizeFile]).then((res) => res[0]);
 
-    return resizeFiled;
-  };
+  //   return resizeFiled;
+  // };
 
-  useEffect(() => {
-    // console.log(image);
-    if (!image) return;
-    resizer(image).then((imgResize) => {
-      console.log("imgResize", imgResize);
-      ///do somthing with file
-    });
-    if (!image) return;
-  }, [image]);
+  // useEffect(() => {
+  //   console.log(image);
+  //   if (!image) return;
+  //   resizer(image).then((imgResize) => {
+  //     console.log("imgResize", imgResize);
+  //     ///do somthing with file
+  //   });
+  //   if (!image) return;
+  // }, [image]);
 
   return (
     <div className=" mx-5 sm:mx-auto sm:w-2/3 mt-6  object-none">
