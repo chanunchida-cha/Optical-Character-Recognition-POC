@@ -8,9 +8,6 @@ interface Props {}
 function Index({}: Props): ReactElement {
   const [image, setImage] = useState<File>();
   const [preview, setPreview] = useState<string>();
-  const [file, setFile] = useState<File>();
-  const [data, setData] = useState<[] | null>();
-  const [pending, setPending] = useState<boolean>(false);
 
   const resizer = async (file: File) => {
     const resizeFile = new Promise((resolve, reject) => {
@@ -21,7 +18,7 @@ function Index({}: Props): ReactElement {
         "WEBP",
         100, /// quality
         0, // Rotate degree
-        (uri) => {
+        (uri:any) => {
           resolve(uri);
         },
         "file"

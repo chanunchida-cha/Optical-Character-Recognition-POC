@@ -1,8 +1,6 @@
-import Button from "@/ui/Button";
+
 import ButtonAmount from "@/ui/ButtonAmount";
 import { previewImage } from "@/utils/previewImage";
-import { getBase64 } from "@/utils/convertImageToBase64";
-import Image from "react-image-webp";
 import React, {
   ChangeEvent,
   FormEvent,
@@ -18,7 +16,6 @@ type Props = {
   buttonUpload: React.ReactNode;
   setPreview: (objectUrl: string) => void;
   setImage: (file: File) => void;
-  // upload:()=>{}
 };
 
 const BoxLayout = ({ preview, image, icon, setPreview, setImage }: Props) => {
