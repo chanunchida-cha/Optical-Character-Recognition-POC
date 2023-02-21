@@ -16,7 +16,7 @@ function Index({}: Props): ReactElement {
                 400, ////width
                 400, /// height
                 "WEBP",
-                90, /// quality
+                80, /// quality
                 0, // Rotate degree
                 (uri: any) => {
                     resolve(uri);
