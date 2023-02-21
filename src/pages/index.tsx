@@ -13,10 +13,10 @@ function Index({}: Props): ReactElement {
         const resizeFile = new Promise((resolve, reject) => {
             Resizer.imageFileResizer(
                 file,
-                400, ////width
-                400, /// height
+                500, ////width
+                500, /// height
                 "WEBP",
-                80, /// quality
+                50, /// quality
                 0, // Rotate degree
                 (uri: any) => {
                     resolve(uri);
