@@ -1,7 +1,7 @@
 import BoxLayout from "@/layouts/BoxLayout";
 import Button from "@/ui/Button";
 import { uploadImage } from "@/utils/uploadImage";
-import React, { ChangeEvent, ReactElement } from "react";
+import React, { MouseEvent, ReactElement, useEffect, useState } from "react";
 
 type Props = {
   image: File;
@@ -11,19 +11,42 @@ type Props = {
   setImage: (file: File) => void;
 };
 
+
+
 function FormMed({
   preview,
   image,
   setPreview,
   setImage,
 }: Props): ReactElement {
+  const [pending, setPending] = useState<boolean>(false);
+  const [result, setResult] = useState<string>("");
+
+  const upload = async (e: MouseEvent<HTMLButtonElement>) => {
+    setPending(true);
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("uploaded_file", image);
+    const res = await uploadImage(formData);
+    console.log(res);
+    setResult(res.result);
+    setPending(false);
+  };
+  
+  useEffect(() => {
+    setResult("");
+  }, [image]);
+  console.log(result);
   return (
     <BoxLayout
       image={image!}
       preview={preview!}
       setPreview={setPreview}
       setImage={setImage}
-      buttonUpload={<Button title="Upload" type="upload" />}
+      pending={pending}
+      result={result}
+      setResult={setResult}
+      buttonUpload={<Button title="Upload" type="upload" upload={upload} />}
       icon={
         <svg
           xmlns="http://www.w3.org/2000/svg"

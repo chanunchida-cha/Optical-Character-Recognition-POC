@@ -1,44 +1,33 @@
-
 import ButtonAmount from "@/ui/ButtonAmount";
 import { previewImage } from "@/utils/previewImage";
-import React, {
-  ChangeEvent,
-  FormEvent,
-  useEffect,
-  useState,
-} from "react";
-import { uploadImage } from "@/utils/uploadImage";
+import React, { ChangeEvent,useState } from "react";
+
 
 type Props = {
   image: File;
   preview: string;
   icon: React.ReactNode;
   buttonUpload: React.ReactNode;
+  pending: boolean;
   setPreview: (objectUrl: string) => void;
   setImage: (file: File) => void;
+  result: string;
+  setResult: (result: string) => void;
 };
 
-const BoxLayout = ({ preview, image, icon, setPreview, setImage }: Props) => {
+const BoxLayout = ({
+  preview,
+  image,
+  icon,
+  setPreview,
+  setImage,
+  buttonUpload,
+  pending,
+  result,
+  setResult,
+}: Props) => {
   console.log("imageimage", image);
-  const [result, setResult] = useState<string>("");
-  const [pending, setPending] = useState<boolean>(false);
   const [amount, setAmount] = useState<number>(0);
-
-  const upload = async (e: FormEvent<HTMLFormElement>) => {
-    setPending(true);
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append("uploaded_file", image);
-    const res = await uploadImage(formData);
-    console.log(res);
-    setResult(res.result);
-    setPending(false);
-  };
-
-  useEffect(() => {
-    setResult("");
-  }, [image]);
-  console.log(result);
 
   return (
     <div className="flex flex-col justify-around ">
@@ -82,19 +71,7 @@ const BoxLayout = ({ preview, image, icon, setPreview, setImage }: Props) => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center mt-2">
-          <button
-            className={
-              "bg-button  w-[8rem] rounded-2xl text-sm text-white py-1 "
-            }
-            type="submit"
-            onClick={(e: any) => {
-              upload(e);
-            }}
-          >
-            Upload
-          </button>
-        </div>
+        <div className="flex justify-center mt-2">{buttonUpload}</div>
         {pending ? (
           <div className=" col-span-12 row-start-4 row-span-2 sm:row-start-4 sm:row-span-2 sm:col-start-4 sm:col-span-6">
             <div className="flex justify-center">
